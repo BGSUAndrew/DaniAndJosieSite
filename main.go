@@ -29,6 +29,14 @@ var photos = []dogphoto{
 
 func main() {
 	router := gin.Default()
-	router.GET("/photos", getPhotos)
+
+	router.Static("/js", "./web/js")
+	router.Static("/css", "./web/css")
+	router.Static("/images", "./web/images")
+
+	router.GET("/", func(c *gin.Context) {
+		c.File("./web/index.html")
+	})
+	router.GET("/api/photos", getPhotos)
 	router.Run("localhost:8080")
 }
