@@ -1,13 +1,15 @@
 package main
 
 import (
+	"log"
 	"net/http"
 
 	"github.com/gin-gonic/gin"
 )
 
-//describes the data in the call
+var err error
 
+// describes the data in the call
 type dogphoto struct {
 	Name string `json:"name"`
 	URL  string `json:"url"`
@@ -39,4 +41,8 @@ func main() {
 	})
 	router.GET("/api/photos", getPhotos)
 	router.Run("localhost:8080")
+
+	if err != nil {
+		log.Fatal(err)
+	}
 }
