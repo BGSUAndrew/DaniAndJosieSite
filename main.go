@@ -13,6 +13,7 @@ var err error
 type dogphoto struct {
 	Name string `json:"name"`
 	URL  string `json:"url"`
+	Dog  string `json:"dog"`
 }
 
 // getPhotos responds with list of all the photos as JSON.
@@ -21,12 +22,15 @@ func getPhotos(c *gin.Context) {
 }
 
 var photos = []dogphoto{
-	{Name: "IMG_7507.JPG", URL: "https://joisethedog.sfo3.cdn.digitaloceanspaces.com/IMG_7507.JPG"},
-	{Name: "IMG_7821.JPG", URL: "https://joisethedog.sfo3.cdn.digitaloceanspaces.com/IMG_7821.JPG"},
-	{Name: "IMG_7873.JPG", URL: "https://joisethedog.sfo3.cdn.digitaloceanspaces.com/IMG_7873.JPG"},
-	{Name: "IMG_7914.JPG", URL: "https://joisethedog.sfo3.cdn.digitaloceanspaces.com/IMG_7914.JPG"},
-	{Name: "IMG_7924.JPG", URL: "https://joisethedog.sfo3.cdn.digitaloceanspaces.com/IMG_7924.JPG"},
-	{Name: "IMG_7960.JPG", URL: "https://joisethedog.sfo3.cdn.digitaloceanspaces.com/IMG_7960.JPG"},
+	{Name: "IMG_7507.JPG", URL: "https://joisethedog.sfo3.cdn.digitaloceanspaces.com/IMG_7507.JPG", Dog: "Dani"},
+	{Name: "IMG_7512.JPG", URL: "https://joisethedog.sfo3.cdn.digitaloceanspaces.com/IMG_7512.JPG", Dog: "Josie"},
+	{Name: "IMG_7821.JPG", URL: "https://joisethedog.sfo3.cdn.digitaloceanspaces.com/IMG_7821.JPG", Dog: "Josie"},
+	{Name: "IMG_7356.JPG", URL: "https://joisethedog.sfo3.cdn.digitaloceanspaces.com/IMG_7356.JPG", Dog: "Josie"},
+	{Name: "IMG_9999.JPG", URL: "https://joisethedog.sfo3.cdn.digitaloceanspaces.com/IMG_9999.jpeg", Dog: "Dani"},
+	{Name: "IMG_7873.JPG", URL: "https://joisethedog.sfo3.cdn.digitaloceanspaces.com/IMG_7873.JPG", Dog: "Dani_And_Josie"},
+	{Name: "IMG_7914.JPG", URL: "https://joisethedog.sfo3.cdn.digitaloceanspaces.com/IMG_7914.JPG", Dog: "Josie"},
+	{Name: "IMG_7924.JPG", URL: "https://joisethedog.sfo3.cdn.digitaloceanspaces.com/IMG_7924.JPG", Dog: "Dani"},
+	{Name: "IMG_7960.JPG", URL: "https://joisethedog.sfo3.cdn.digitaloceanspaces.com/IMG_7960.JPG", Dog: "Josie"},
 }
 
 func main() {
